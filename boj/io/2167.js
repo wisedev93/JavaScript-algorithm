@@ -1,13 +1,23 @@
 "use strict";
 
 const getSum = (cmd, arr) => {
-  const x = cmd[0];
-  const y = cmd[1];
-  const i = cmd[2];
-  const j = cmd[3];
-
-  console.log("🚀 ~ file: 2167.js:4 ~ getSum ~ cmd, arr:", cmd, arr);
+  const xi = cmd[0] - 1;
+  const xj = cmd[1] - 1;
+  const yi = cmd[2] - 1;
+  const yj = cmd[3] - 1;
   let res = 0;
+
+  for (let i = 0; i < arr.length; i++) {
+    if (xi <= i && i <= yi) {
+      for (let j = 0; j < arr[i].length; j++) {
+        if (xj <= j && j <= yj) {
+          res += arr[i][j];
+        }
+      }
+    }
+  }
+
+  console.log(res);
 };
 
 const rf = require("fs")
@@ -20,7 +30,6 @@ const rf = require("fs")
 const ix = rf[0];
 const jy = rf[1];
 const tmpArr = rf.slice(2, ix * jy + 2);
-
 let arr = [];
 
 for (let i = 0; i < ix; i++) {
