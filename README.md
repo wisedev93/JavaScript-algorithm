@@ -4,7 +4,7 @@
 
 algorithm 문제 풀이 기록
 
-# 문제 출처 : boj, programmers
+# 문제 출처
 
 boj : https://www.acmicpc.net/problemset
 
