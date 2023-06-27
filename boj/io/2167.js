@@ -21,7 +21,7 @@ const getSum = (cmd, arr) => {
 };
 
 const rf = require("fs")
-  .readFileSync("./boj/io/test.txt")
+  .readFileSync("./boj/io/example.txt")
   .toString()
   .trim()
   .split(/\s/)

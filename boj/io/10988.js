@@ -1,7 +1,7 @@
 "use strict";
 
 const readfile = require("fs")
-  .readFileSync("./boj/io/test.txt")
+  .readFileSync("./boj/io/example.txt")
   .toString()
   .trim();
 // const readfile = require("fs").readFileSync("/dev/stdin").toString().trim();

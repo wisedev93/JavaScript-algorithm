@@ -24,7 +24,7 @@ const getMin = (big, small) => {
 };
 
 const [a, b] = require("fs")
-  .readFileSync("./boj/io/test.txt")
+  .readFileSync("./boj/io/example.txt")
   .toString()
   .trim()
   .split(" ")
