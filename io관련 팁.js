@@ -1,7 +1,10 @@
 "use strict";
 // "use Strict" 써주는게 조금 더 빠르다.
 // console.log() 는 무겁고 느린 함수 이니 적게 쓰는 것이 좋다. process.stdout.write()도 마찬가지
-
+/*
+출처 : https://tesseractjh.tistory.com/39
+출처 : https://degurii.tistory.com/108
+*/
 // ------------- readFile -------------
 {
   const fs = require("fs");
@@ -11,7 +14,7 @@
     .trim()
     .split("\n");
   console.log(readfile);
-  readfile.map((v) => console.log(v));
+  readfile.forEach((v) => console.log(v));
 }
 // ------------- readLine -------------
 {
