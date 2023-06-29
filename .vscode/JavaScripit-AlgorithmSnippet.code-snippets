@@ -1,0 +1,14 @@
+{
+  "create new programmers JavaScript Algorithm File": {
+    "prefix": "programmers",
+    "body": [
+      "function solution($1) {",
+      "let answer = \"\";",
+      "return answer;",
+      "}",
+      "",
+      "console.log(solution($1));"
+    ],
+    "description": "programmers snnipet"
+  }
+}
