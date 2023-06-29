@@ -12,8 +12,6 @@ programmers : https://school.programmers.co.kr/learn/challenges
 
 # etc...
 
-##
-
 실행 위치에 따라서 input file의 path가 달라짐
 
 ##
