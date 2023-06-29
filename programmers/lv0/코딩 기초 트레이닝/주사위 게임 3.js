@@ -1,38 +1,33 @@
 const getSize = (arr) => new Set(arr).size;
+const conunt = (arr, num) => arr.filter((v) => v === num).length;
 
 function solution(...rest) {
-  let answer;
-  const arr = rest;
+  const arr = rest.sort((a, b) => b - a);
   const size = getSize(arr);
   let p, q;
-  if (size === 1) {
-    answer = arr[0] * 1111;
-  } else if (size === 2) {
-    arr.sort((a, b) => b - a);
-    if (arr[2] === arr[3]) {
-      p = arr[0];
-      q = arr[2];
-      answer = (p + q) * (p - q);
+
+  if (size === 2) {
+    if (arr[1] === arr[2]) {
+      const cnt = conunt(arr, arr[0]);
+      p = cnt > 1 ? arr[0] : arr[3];
+      q = cnt > 1 ? arr[3] : arr[0];
+      return (10 * p + q) ** 2;
     } else {
       p = arr[0];
       q = arr[3];
-      answer = (10 * p + q) ** 2;
+      return (p + q) * (p - q);
     }
   } else if (size === 3) {
-    const subArr = arr.splice(1);
-    //정렬이 잘못된다~
     let res = 1;
-    subArr.forEach((v) => {
-      if (v !== arr[0]) {
+    arr.forEach((v) => {
+      const vCnt = conunt(arr, v);
+      if (vCnt === 1) {
         res *= v;
       }
     });
-    answer = res;
-  } else {
-    arr.sort((a, b) => a - b);
-    answer = arr[0];
+    return res;
   }
-  return answer;
+  return size === 1 ? arr[0] * 1111 : arr[arr.length - 1];
 }
 
 console.log(solution(2, 2, 2, 2));
