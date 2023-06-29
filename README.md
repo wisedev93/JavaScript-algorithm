@@ -18,4 +18,4 @@ programmers : https://school.programmers.co.kr/learn/challenges
 
 ##
 
-project root에 있는 .vscode에 JavaScripit-AlgorithmSnippet.code-snippets를 넣고 사용하면 편하다.
+.vscode에서 codeSnippet file을 보고 잘 활용해 보자
