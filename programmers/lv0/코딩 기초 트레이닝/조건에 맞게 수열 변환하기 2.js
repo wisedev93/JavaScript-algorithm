@@ -1,36 +1,39 @@
-function isEqaul(arr1, arr2) {
-  let res = false;
-  if (arr1.length === arr2.length) {
-    for (const i in arr1) {
-      // res = arr1[+i] === arr2[+i] ? true : false;
-      if (arr1[+i] === arr2[+i]) {
-        res = true;
-      } else {
-        return false;
-      }
-    }
-  }
-  return res;
-}
+const isEqaul = (arr, arrX) => arr.every((v, i) => v === arrX[i]);
 
-function getX(arr, cnt) {
-  const x = [];
-  arr.forEach((v, i) => {
+function getArrX(arr, cnt = 0) {
+  const x = arr.map((v) => {
     if (v >= 50 && !(v % 2)) {
-      x[i] = v / 2;
+      return v / 2;
     } else if (v < 50 && v % 2) {
-      x[i] = v * 2 + 1;
+      return v * 2 + 1;
     } else {
-      x[i] = v;
+      return v;
     }
   });
-  if (isEqaul(x, arr)) {
+  // if (isEqaul(x, arr)) {
+  if (arr.every((v, i) => v === x[i])) {
     return cnt;
   } else {
-    return getX(x, cnt + 1);
+    return getArrX(x, cnt + 1);
   }
 }
 
-const solution = (arr) => getX(arr, 0);
+const solution = (arr) => getArrX(arr);
+
+// function solution(arr, n = 0) {
+//   while (!arr.every((v) => (v >= 50 && v % 2) || (v < 50 && !(v % 2)))) {
+//     arr = arr.map((v) => {
+//       if (v >= 50 && v % 2 === 0) {
+//         return v / 2;
+//       }
+//       if (v < 50 && v % 2 === 1) {
+//         return v * 2 + 1;
+//       }
+//       return v;
+//     });
+//     n++;
+//   }
+//   return n;
+// }
 
 console.log(solution([1, 2, 3, 100, 99, 98]));
