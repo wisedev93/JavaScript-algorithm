@@ -3,7 +3,9 @@
     "prefix": "programmers",
     "body": [
       "function solution($1) {",
+      "const solution = ($1) => ",
       "let answer = \"\";",
+      "const answer = [];",
       "return answer;",
       "}",
       "",
