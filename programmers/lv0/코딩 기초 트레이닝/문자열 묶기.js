@@ -1,7 +1,7 @@
 function solution(strArr) {
   strArr.sort((a, b) => b.length - a.length);
   const answer = new Array(strArr[0].length).fill(0);
-  //   const answer = Array.from({ strArr[0].length }).fill(0); // Whichi one is better?
+  //   const answer = Array.from({ strArr[0].length }).fill(0); // Which one is better?
   strArr.forEach((v) => {
     answer[v.length - 1]++;
   });
