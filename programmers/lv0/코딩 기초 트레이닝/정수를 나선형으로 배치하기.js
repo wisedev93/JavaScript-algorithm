@@ -90,3 +90,4 @@ function solution(n) {
 
 console.log(solution(4));
 console.log(solution(5));
+console.log(solution(6));
