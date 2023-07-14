@@ -1,6 +1,7 @@
 function solution(my_string) {
   const [a, op, b, ...rest] = my_string.split(" ");
   let answer = op === "+" ? +a + +b : +a - +b;
+
   while (rest.length > 0) {
     const newOp = rest.shift();
     const newA = rest.shift();
